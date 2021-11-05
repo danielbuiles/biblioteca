@@ -1,5 +1,5 @@
 <?php
-include '../database/dataBase.php';
+require_once('/Daniel/Xampp/htdocs/biblioteca/api/database/dataBase.php');
 
 class Libro extends DataBase
 {

@@ -1,12 +1,12 @@
 <?php
-include './config.php';
+include '/Daniel/Xampp/htdocs/biblioteca/api/config.php';
 
-class DataBase{
-
+class DataBase extends Config{
+    
     function dbConnect(){
         try {
-            $dbDatos ="mysql:host={'$DB_HOST'};dbname={'$DB_NAME'}";
-            $conexion=new PDO($dbDatos,$DB_USER,$DB_PASSWORD);
+            $dbDatos="mysql:host=$this->DB_HOST;dbname=$this->DB_NAME";
+            $conexion=new PDO($dbDatos,$this->DB_USER,$this->DB_PASS);
             return $conexion;
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
@@ -22,7 +22,7 @@ class DataBase{
             echo "Error: " . $e->getMessage();
         }
     }
-
+    
     function select_db($sql){
         try {
             $conexion = $this->dbConnect();
