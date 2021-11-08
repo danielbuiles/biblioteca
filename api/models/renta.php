@@ -21,8 +21,7 @@ class Renta extends DataBase
     {
         $libro_id = $obj['libro_id'];
         $usuario_id = $obj['usuario_id'];
-        $fecha_renta = $obj['fecha_renta'];
-        $sql = "INSERT INTO renta (libro_id,usuario_id,fecha) VALUES ($libro_id,$usuario_id,'$fecha_renta')";
+        $sql = "INSERT INTO renta (libro_id,usuario_id) VALUES ($libro_id,$usuario_id)";
         $this->add_del_update_db($sql);
     }
 
@@ -31,7 +30,7 @@ class Renta extends DataBase
         $id = $obj['id'];
         $libro_id = $obj['libro_id'];
         $usuario_id = $obj['usuario_id'];
-        $fecha_renta = $obj['fecha_renta'];
+        $fecha_renta = $obj['fecha'];
         $sql = "UPDATE renta SET libro_id = $libro_id, usuario_id = $usuario_id, fecha = '$fecha_renta' WHERE id = $id";
         $this->add_del_update_db($sql);
     }
